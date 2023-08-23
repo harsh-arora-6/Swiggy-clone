@@ -1,0 +1,351 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --swiggy-color: #fc8019;
+    --text-color: #282c3f;
+    --light-text-color: #3d4152;
+}
+
+html,
+body {
+    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 1240px;
+}
+
+.site-header {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 40px -20px rgba(40, 44, 63, 0.15);
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 5;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 1200px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+/* transition: all 0.3s;
+  :thisline sets up a CSS transition for all properties with a duration of 0.3 seconds. A transition is an animation effect that smoothly changes a CSS property's value over a specified duration. In this case, it means that whenever any property of the .logo-img class changes, such as its transform property, the change will be animated over a span of 0.3 seconds.
+  
+  transform-origin: 50% 50%;:
+  The transform-origin property defines the point around which transformations are applied. In this case, it's set to the center of the element (50% from the left and 50% from the top). This means that transformations like rotation and scaling will be centered around the middle of the element. */
+
+/* transform: scale(1.1);:
+  This line applies a scale transformation to the .logo-img element when it's hovered. The scale() transformation function is used to resize an element while maintaining its aspect ratio. A scale factor of 1 represents the original size, and a factor greater than 1 enlarges the element. In this case, scale(1.1) enlarges the element by 10% when hovered over. */
+.logo-img {
+    transition: all 0.3s;
+    transform-origin: 50% 50%;
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+}
+
+.location-container {
+    display: flex;
+    margin-left: 40px;
+}
+
+.location-container:hover>.location-type {
+    color: var(--swiggy-color);
+}
+
+.location-type {
+    border-bottom: 2px solid;
+    padding-bottom: 3px;
+    cursor: pointer;
+    color: #3d4152;
+    font-weight: 700;
+    display: block;
+    min-width: 30px;
+    max-width: 112px;
+    font-size: 12.3px;
+}
+
+.location-container:hover>.location-detail {
+    color: #b4b5bc;
+}
+
+.location-detail {
+    padding-left: 10px;
+    color: #686b78;
+    cursor: pointer;
+    max-width: 228px;
+    font-size: 13.5px;
+}
+
+.location-detail:hover {
+    color: #b4b5bc;
+}
+
+.icon-down-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.icon-downArrow {
+    border-right: 2px solid var(--swiggy-color);
+    border-bottom: 2px solid var(--swiggy-color);
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: auto;
+    height: 100%;
+}
+
+.nav-item {
+    display: flex;
+    margin-right: 60px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+}
+
+.nav-item:first-child {
+    margin-right: 0px;
+}
+
+.item-link {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-item-icon {
+    fill: #3d4152;
+    stroke-width: 0;
+    stroke: #282c3f;
+}
+
+.nav-item-text {
+    color: #3d4152;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart .nav-item-icon {
+    fill: #fff;
+    stroke-width: 2px;
+    stroke: #282c3f;
+}
+
+/* placing cart count inside icon */
+.cart-count {
+    position: absolute;
+    bottom: 32px;
+    left: 6px;
+    color: #3d4152;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.active-text,
+.active-count {
+    color: var(--swiggy-color);
+}
+
+.active-icon {
+    fill: var(--swiggy-color);
+    stroke: var(--swiggy-color);
+}
+
+/* I put cart as otherwise with only .active-cart-icon styles were not applying correctly 
+    as above we have .cart .nav-item-icon which had higher specificity
+  */
+.cart .active-cart-icon {
+    fill: #fff;
+    stroke: var(--swiggy-color);
+}
+
+/* .item-link:hover .nav-item-text {
+    color: var(--swiggy-color);
+  }
+  .item-link:hover .nav-item-icon {
+    fill: var(--swiggy-color);
+    stroke: var(--swiggy-color);
+  }
+  
+  .item-link:hover .cart-count {
+    color: var(--swiggy-color);
+  }
+  .cart .item-link:hover .nav-item-icon {
+    stroke: var(--swiggy-color);
+    fill: #fff;
+  } */
+
+/* .item-link:hover .nav-item-text.NEW {
+    color: #ffa700;
+  } */
+
+.NEW {
+    color: #ffa700;
+    font-size: 10px;
+    font-weight: 600;
+    position: absolute;
+    right: -24px;
+    top: 26px;
+}
+
+.signin .nav-item-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 80px;
+}
+
+/* set bottom as height of tooltip box */
+.tooltip-box {
+    position: absolute;
+    bottom: -185px;
+    right: 0px;
+    width: 340px;
+    height: 185px;
+    border-top: 2px solid var(--swiggy-color);
+    background-color: white;
+    z-index: 2;
+    box-shadow: 0 0 50px -20px #12190f;
+    cursor: default;
+    background-color: white;
+}
+
+.tooltip-icon {
+    position: absolute;
+    top: -7px;
+    right: 20px;
+    border-right: 2px solid var(--swiggy-color);
+    border-top: 2px solid var(--swiggy-color);
+    width: 10px;
+    height: 10px;
+    transform: rotate(-45deg);
+    z-index: 3;
+    background-color: white;
+}
+
+/* to hide and show tooltip boxes 
+  * display doesn't transition
+  * also using only opacity was creating problem of being detecting mouse events
+  */
+/* .hide {
+    display: none;
+    transition: display 1s;
+    -webkit-transition: display 0.5s;
+    -moz-transition: display 0.5s;
+    -o-transition: display 0.5s;
+    opacity: 0;
+    transition: opactiy 1s;
+    -webkit-transition: opactiy 1s;
+    -moz-transition: opactiy 1s;
+    -o-transition: opactiy 1s;
+  }
+  .show {
+    display: block;
+    transition: display 1s;
+    -webkit-transition: display 1s;
+    -moz-transition: display 1s;
+    -o-transition: display 1s;
+    opacity: 1;
+    transition: opactiy 1s;
+    -webkit-transition: opactiy 1s;
+    -moz-transition: opactiy 1s;
+    -o-transition: opactiy 1s;
+  } */
+
+/* to hide and show tooltip boxes */
+.hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.1s 0s;
+}
+
+.show-fast {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0s, visibility 0s;
+}
+
+.show-slow {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s 0.5s, visibility 0s;
+}
+
+/* setting different height signin tooltip */
+.signin .tooltip-box {
+    bottom: -232px;
+    left: -58px;
+    width: 220px;
+    height: 0;
+    min-height: 232px;
+}
+
+.signin .tooltip-icon {
+    left: 50%;
+}
+
+.signin ul {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+    height: 100%;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.signin .tooltip-box-option {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.signin .tooltip-option-text {
+    font-size: 14px;
+    color: var(--text-color);
+    transition: font-weight 0.1s ease;
+}
+
+.signin .tooltip-box-option:hover>.tooltip-option-text {
+    font-weight: 550;
+}
