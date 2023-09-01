@@ -42,15 +42,44 @@ rightBtn.addEventListener("click", (e) => {
   scrollToRight(bestOffersContent);
 });
 
-bestOffersContent.addEventListener("scroll", (e) => {
-  if (findLeftScrollDist(e.target) <= 45) {
+// scroll event fires very frequently
+function throttle(cb, delay = 200) {
+  let shouldWait = false;
+  let waitingArgs;
+  const timeoutFunc = () => {
+    if (waitingArgs == null) {
+      shouldWait = false;
+    } else {
+      cb(...waitingArgs);
+      waitingArgs = null;
+      setTimeout(timeoutFunc, delay);
+    }
+  };
+
+  return (...args) => {
+    if (shouldWait) {
+      waitingArgs = args;
+      return;
+    }
+
+    cb(...args);
+    shouldWait = true;
+    setTimeout(timeoutFunc, delay);
+  };
+}
+const updateBtnStatus = throttle((target) => {
+  console.log("scrolled");
+  if (findLeftScrollDist(target) <= 45) {
     leftBtn.setAttribute("disabled", "disabled");
   } else {
     leftBtn.removeAttribute("disabled");
   }
-  if (findRightScrollDist(e.target) <= 45) {
+  if (findRightScrollDist(target) <= 45) {
     rightBtn.setAttribute("disabled", "disabled");
   } else {
     rightBtn.removeAttribute("disabled");
   }
+});
+bestOffersContent.addEventListener("scroll", (e) => {
+  updateBtnStatus(e.target);
 });
