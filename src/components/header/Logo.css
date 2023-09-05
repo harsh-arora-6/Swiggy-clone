@@ -1,0 +1,16 @@
+/* transition: all 0.3s;
+  :thisline sets up a CSS transition for all properties with a duration of 0.3 seconds. A transition is an animation effect that smoothly changes a CSS property's value over a specified duration. In this case, it means that whenever any property of the .logo-img class changes, such as its transform property, the change will be animated over a span of 0.3 seconds.
+  
+  transform-origin: 50% 50%;:
+  The transform-origin property defines the point around which transformations are applied. In this case, it's set to the center of the element (50% from the left and 50% from the top). This means that transformations like rotation and scaling will be centered around the middle of the element. */
+
+/* transform: scale(1.1);:
+  This line applies a scale transformation to the .logo-img element when it's hovered. The scale() transformation function is used to resize an element while maintaining its aspect ratio. A scale factor of 1 represents the original size, and a factor greater than 1 enlarges the element. In this case, scale(1.1) enlarges the element by 10% when hovered over. */
+.logo-img {
+    transition: all 0.3s;
+    transform-origin: 50% 50%;
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+}

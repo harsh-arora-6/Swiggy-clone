@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --swiggy-color: #fc8019;
+  --text-color: #282c3f;
+  --light-text-color: #3d4152;
+}
+
+html,
+body {
+  font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 1240px;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
