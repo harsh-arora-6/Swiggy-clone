@@ -1,0 +1,247 @@
+main {
+    min-width: 1240px;
+    height: 100%;
+}
+
+.content-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    height: 100%;
+}
+
+.content-wrapper {
+    padding: 16px;
+    padding-top: 30px;
+    min-width: 80%;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    height: 100%;
+}
+
+.heading {
+    display: flex;
+    min-width: 100%;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.content {
+
+    min-width: 100%;
+    max-width: 100%;
+    display: flex;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    cursor: pointer;
+    min-height: 100%;
+    flex: 1
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+/* arrow button designs */
+.scroll-icons button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+}
+
+[disabled] {
+    opacity: 0.5;
+}
+
+.left-arrow {
+    margin-right: 10px;
+}
+
+.left-arrow,
+.right-arrow {
+    border-radius: 100%;
+    padding: 8px 8px 4px;
+    background: rgb(226, 226, 231);
+}
+
+.card {
+    min-width: 33%;
+    height: 100%;
+    padding-right: 16px;
+    flex-shrink: 0;
+
+}
+
+.content .card:first-child {
+    padding-left: 16px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.restaurants .content-wrapper {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.restaurants .content {
+    min-width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 16px;
+    /* background-color: aqua; */
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.card-small-wrapper {
+    display: grid;
+    place-content: center;
+    padding: 0px;
+    /* background-color: red; */
+}
+
+.card-small-wrapper:hover .card-small {
+    transform: scale(0.9);
+}
+
+.card-small {
+    display: grid;
+    transition: all 0.05s ease 0s;
+    cursor: pointer;
+    gap: 12px;
+    transition: all 0.3s;
+    transform-origin: 50% 50%;
+    /* background-color: aqua; */
+    width: 100%;
+}
+
+.card-small .image-wrapper {
+    position: relative;
+    width: 100%;
+    /* padding is applied on basis of parent elements width */
+    padding-top: 65%;
+    /* 4:3 aspect ratio (75% = 3/4) */
+}
+
+.card-small .img-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 8px);
+}
+
+.card-small img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scheme-wrapper {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    display: grid;
+    align-content: end;
+    text-align: left;
+    padding-left: 12px;
+    padding-right: 6px;
+    padding-bottom: 8px;
+    height: calc(81px);
+    background: linear-gradient(rgba(27, 30, 36, 0) 0%, rgb(27, 30, 36) 84.21%);
+}
+
+.scheme {
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: -0.5px;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 100%;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.card-small .details {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin-left: 12px;
+    justify-content: center;
+    align-items: flex-start;
+    color: rgba(2, 6, 12, 0.6);
+    gap: 5px;
+    font-size: 15px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    /* background-color: honeydew; */
+}
+
+.rating-value {
+    /* visual centering */
+    font-weight: 550;
+    margin-top: -2px;
+    color: rgba(2, 6, 12, 0.75);
+}
+
+.food-items {
+    max-width: 100%;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.name {
+    max-width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+    color: rgba(2, 6, 12, 0.75);
+}
+
+.place {
+    max-width: 100%;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.break {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.break hr {
+    min-width: 75.5%;
+    border: 1px solid rgb(240, 240, 245);
+}
