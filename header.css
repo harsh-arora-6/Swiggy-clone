@@ -294,10 +294,10 @@ a:hover {
   } */
 
 /* to hide and show tooltip boxes */
-.hide {
+.hide-slow {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s, visibility 0.1s 0s;
+    transition: opacity 0.4s, visibility 0.1s 0s;
 }
 
 .show-fast {
@@ -309,7 +309,7 @@ a:hover {
 .show-slow {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.3s 0.5s, visibility 0s;
+    transition: opacity 0.3s 0.5s ease-in-out, visibility 0s;
 }
 
 /* setting different height signin tooltip */
