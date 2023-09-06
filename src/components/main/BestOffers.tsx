@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "./Main.css";
 import BestOfferCard from "./BestOfferCard";
-import throttle from "../utility";
+import throttle from "../utility/utility";
 
 const imageLinks = [
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/rng/md/carousel/production/cb1702482e3d59ee8585f9cc225ced88",

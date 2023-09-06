@@ -13,7 +13,7 @@ main {
 
 .content-wrapper {
     padding: 16px;
-    padding-top: 30px;
+    /* padding-top: 30px; */
     min-width: 80%;
     max-width: 80%;
     display: flex;
@@ -21,6 +21,7 @@ main {
     align-items: center;
     gap: 5px;
     height: 100%;
+    background-color: red;
 }
 
 .heading {
@@ -244,4 +245,42 @@ main {
 .break hr {
     min-width: 75.5%;
     border: 1px solid rgb(240, 240, 245);
+}
+
+.filter-box {
+    display: flex;
+    max-width: 1240px;
+    min-width: 1240px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-option-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 16px;
+    background-color: blue;
+}
+
+.filter-option-wrapper>* {
+    margin-right: 15px;
+    cursor: pointer;
+    text-align: center;
+    width: 5%;
+    height: 40px;
+}
+
+.restaurants h2 {
+    margin-left: -16px;
+}
+
+.other-end {
+    margin-left: auto
+}
+
+
+.site-header.content-section {
+    z-index: 0;
 }

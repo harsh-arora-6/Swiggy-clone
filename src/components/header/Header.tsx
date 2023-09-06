@@ -1,7 +1,6 @@
 import "./Header.css";
 import Location from "./Location";
 import Logo from "./Logo";
-import React from "react";
 import NavItem from "./NavItem";
 export default function Header() {
   return (

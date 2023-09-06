@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./NavItem.css";
-import React from "react";
 import ItemImg from "./NavItemImg";
 import { useAuth } from "../../context/AuthContext";
 
