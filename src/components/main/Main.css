@@ -21,8 +21,8 @@ main {
     align-items: center;
     gap: 5px;
     height: 100%;
-    background-color: red;
 }
+
 
 .heading {
     display: flex;
@@ -114,7 +114,6 @@ main {
     display: grid;
     place-content: center;
     padding: 0px;
-    /* background-color: red; */
 }
 
 .card-small-wrapper:hover .card-small {
@@ -261,15 +260,15 @@ main {
     justify-content: flex-start;
     width: 100%;
     padding: 16px;
-    background-color: blue;
+    margin: 0px -32px;
 }
 
 .filter-option-wrapper>* {
     margin-right: 15px;
     cursor: pointer;
     text-align: center;
-    width: 5%;
-    height: 40px;
+    width: fit-content;
+
 }
 
 .restaurants h2 {
@@ -280,7 +279,13 @@ main {
     margin-left: auto
 }
 
+.search-bar {
+    margin-top: -16px;
+    margin-bottom: -16px;
+    height: 50px;
+    width: 25%;
+}
 
 .site-header.content-section {
-    z-index: 0;
+    z-index: 10;
 }
