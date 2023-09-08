@@ -13,8 +13,7 @@ export default function Main() {
       if (containerRef.current) {
         const node = containerRef.current;
         const { bottom } = node.getBoundingClientRect();
-        console.log(bottom);
-        if (bottom > 90) {
+        if (bottom > 110) {
           setIsNewHeader(false);
         } else {
           setIsNewHeader(true);

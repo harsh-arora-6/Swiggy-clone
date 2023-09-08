@@ -1,31 +1,29 @@
-import { LegacyRef, forwardRef } from "react";
-import "./Main.css";
-export interface CardProps {
-  id: number;
-  src: string;
-  scheme: string;
-  name: string;
-  rating: number;
-  cuisine: string;
-  place: string;
-}
-const RestaurantCard = forwardRef(function RestaurantCard(
-  { src, scheme, name, rating, cuisine, place }: CardProps,
-  ref: LegacyRef<HTMLAnchorElement> | undefined
-) {
+import "../main/Main.css";
+import "../../index.css";
+export function LoadingRestaurant() {
   return (
-    <a ref={ref} href="/" className="card-small-wrapper">
+    <a
+      href="/"
+      className="card-small-wrapper"
+      //   style={{ position: "fixed", top: "50%", left: "50%" }}
+    >
       <div className="card-small">
         <div className="img-container">
           <div className="image-wrapper">
-            <img className="sc-fqkvVR ecqJfI" src={src} alt={name} />
+            <img
+              className="sc-fqkvVR ecqJfI"
+              src={
+                "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/56c9ab92bd79745fd152a30fa2525426"
+              }
+              alt="loading"
+            />
           </div>
           <div className="scheme-wrapper">
-            <div className="scheme ellipsis">{scheme}</div>
+            <div className="scheme ellipsis">Scheme...</div>
           </div>
         </div>
         <div className="details ellipsis">
-          <div className="name ellipsis">{name}</div>
+          <div className="name ellipsis">Name...</div>
           <div className="rating">
             <div className="rating-img">
               <svg
@@ -64,14 +62,12 @@ const RestaurantCard = forwardRef(function RestaurantCard(
                 </defs>
               </svg>
             </div>
-            <div className="rating-value">{rating}</div>
+            <div className="rating-value">Rating...</div>
           </div>
-          <div className="food-items ellipsis">{cuisine}</div>
-          <div className="place ellipsis">{place}</div>
+          <div className="food-items ellipsis">Cuisine...</div>
+          <div className="place ellipsis">Place...</div>
         </div>
       </div>
     </a>
   );
-});
-
-export default RestaurantCard;
+}

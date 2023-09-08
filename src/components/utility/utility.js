@@ -22,3 +22,11 @@ export default function throttle(cb, delay = 100) {
     setTimeout(timeoutFunc, delay);
   };
 }
+
+export function sleep(delay = 1000) {
+  const date = Date.now();
+
+  while (Date.now() < date + delay) {
+    // busy wait loop
+  }
+}
